@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+        <artifactId>keycloak-parent</artifactId>
+        <groupId>org.keycloak</groupId>
+        <version>3.4.3.Final</version>
+        <relativePath>parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.my.company.keycloak</groupId>
+  	<artifactId>custom-themes</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+
+  	<name>Custom Keycloak Themes</name>
+  	
+  	<profiles>
+        <profile>
+            <id>freemarker</id>
+            <activation>
+                <property>
+                    <name>custom</name>
+                </property>
+            </activation>
+            <build>
+            	<finalName>custom-themes</finalName>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                    </resource>
+                </resources>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-jar-plugin</artifactId>
+                    </plugin>
+	                <plugin>
+		                <groupId>org.apache.maven.plugins</groupId>
+		                <artifactId>maven-deploy-plugin</artifactId>
+		                <configuration>
+		                    <skip>true</skip>
+		                </configuration>
+		            </plugin>
+	                <plugin>
+		                <groupId>org.wildfly.plugins</groupId>
+		                <artifactId>wildfly-maven-plugin</artifactId>
+		                <configuration>
+		                    <skip>false</skip>
+		                    <username>jboss</username>
+		                    <password>jboss00#</password>
+		                </configuration>
+		            </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
