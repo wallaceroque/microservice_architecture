@@ -1,0 +1,5 @@
+com/example/springmvc/controller/ProductController.class
+com/example/springmvc/boot/DataLoader.class
+com/example/springmvc/SpringmvcApplication.class
+com/example/springmvc/repository/ProductRepository.class
+com/example/springmvc/model/Product.class

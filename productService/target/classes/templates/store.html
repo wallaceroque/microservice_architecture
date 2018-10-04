@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Store</title>
+    <th:block th:include="layout/header"></th:block>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(products)}">
+        <h2>Store</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Buy</th>
+            </tr>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}">Id</td>
+                <td th:text="${product.name}">Name</td>
+                <td th:text="${product.description}">Description</td>
+                <td th:text="${product.type}">Type</td>
+                <td th:text="${product.category}">Category</td>
+                <td th:text="${product.price}">Price</td>
+                <td><a th:href="${'http://localhost:5555/sales/'}" class="btn btn-default">buy</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

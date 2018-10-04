@@ -1,0 +1,5 @@
+/home/daniel/workspaceSpringMVC/spring-mvc-crud-reference/src/main/java/com/example/springmvc/SpringmvcApplication.java
+/home/daniel/workspaceSpringMVC/spring-mvc-crud-reference/src/main/java/com/example/springmvc/controller/ProductController.java
+/home/daniel/workspaceSpringMVC/spring-mvc-crud-reference/src/main/java/com/example/springmvc/model/Product.java
+/home/daniel/workspaceSpringMVC/spring-mvc-crud-reference/src/main/java/com/example/springmvc/repository/ProductRepository.java
+/home/daniel/workspaceSpringMVC/spring-mvc-crud-reference/src/main/java/com/example/springmvc/boot/DataLoader.java

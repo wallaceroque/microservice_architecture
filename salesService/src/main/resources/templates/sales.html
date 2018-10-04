@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Sales</title>
+    <th:block th:include="layout/header"></th:block>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(sales)}">
+        <h2>All Sales</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Adress</th>
+                <th>CredCard</th>
+            </tr>
+            <tr th:each="sale : ${sales}">
+                <td th:text="${sale.id}">Id</td>
+                <td th:text="${sale.name}">Name</td>
+                <td th:text="${sale.description}">Description</td>
+                <td th:text="${sale.adress}">Adress</td>
+                <td th:text="${sale.credcard}">Credcard</td>
+                <td><a th:href="${'/sale/payment/' + sale.id}" class="btn btn-default">payment</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

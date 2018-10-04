@@ -1,0 +1,32 @@
+version: "3.5"
+services:
+  springmvc-service:
+    image: spring-mvc-crud-service:1.0.0
+    container_name: spring-mvc-crud-service
+    build:
+      context: ./
+      dockerfile: spring-mvc-crud.dockerfile
+      #args:
+      #  HTTP_PROXY: http://10.70.180.39:8080
+      #  HTTPS_PROXY: http://10.70.180.39:8080   
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 350M
+        reservations:
+          cpus: '0.25'
+          memory: 350M
+
+    #cpu_percent: 25
+    #mem_limit: 350m    
+    environment: 
+      JAVA_OPTIONS: "-Xmx100m"
+    ports:
+      - "4444:4444"
+    networks:
+     -  backend-nw
+    
+networks: 
+  backend-nw:
+
